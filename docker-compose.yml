@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  web:
+    container_name: web
+    build: ./front-end
+    ports:
+      - "8080:8080"
+  api:
+    container_name: api
+    build: ./back-end
+    environment:
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: timemanager
+      PGPORT: 5432
+      PGHOST: db
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6
+    container_name: db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
