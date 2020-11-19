@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "445150e3-923e-4bd5-bad6-83de39eeee4a",
+		"name": "timemanager_2020_78",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "GetAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\":\n    {\n        \"role\": \"general_manager\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/roles",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\":\n    {\n        \"role\": \"general_manager\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/roles",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"employee@email.fr\",\n    \"password\": \"Azerty-67\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/sign_in",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\":\n    {\n        \"email\": \"generalmanager@email.fr\",\n        \"password\": \"Azerty-67\",\n        \"password_confirmation\": \"Azerty-67\",\n        \"firstname\": \"test\",\n        \"lastname\": \"test\",\n        \"role_id\": 3\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/sign_up",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGkiLCJleHAiOjE2MDY5MTAyMjksImlhdCI6MTYwNDQ5MTAyOSwiaXNzIjoiYXBpIiwianRpIjoiOGY3ZTVmMDUtZWU5Yy00ZGNkLWFjZjQtODdkMGMwMTRmZjU2IiwibmJmIjoxNjA0NDkxMDI4LCJzdWIiOiIxIiwidHlwIjoiYWNjZXNzIn0.NKE_sRlXKspfH4O7dDu_trXcX3TXEQ10VrnL9drmb9moC_lsAnXaNH2AlH7ZOtwvH7TR60rRcv54ol_Xy_-rSQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/my_user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"my_user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
